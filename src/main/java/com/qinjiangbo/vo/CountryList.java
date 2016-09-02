@@ -19,5 +19,14 @@ public class CountryList {
         countries.add(new Country("Russia", 1000, "Moscow"));
     }
 
+    /**
+     * 查找国家信息
+     *
+     * @return
+     */
+    public List<Country> findCountries() {
+        return countries;
+    }
+
 
 }

@@ -23,7 +23,8 @@ public class FunctionTest {
     @Test
     public void testFunction1() {
         List<String> capitalList = countryService.findCapitalsInUpperCase();
-        capitalList.get(0);
-        System.out.println(capitalList.get(2) + " parent iron!");
+        for (String capital : capitalList) {
+            System.out.println(capital);
+        }
     }
 }

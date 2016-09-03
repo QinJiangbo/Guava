@@ -32,10 +32,8 @@ public class CountryService {
             }
         };
 
-        // when
         List<String> capitalList = Lists.transform(countryList.findCountries(), capitalCityFunction);
 
-        // then
         return capitalList;
     }
 }

@@ -80,7 +80,7 @@ public class CountryService {
      *
      * @return
      */
-    public Collection<String> forMapFunction() {
+    public List<String> forMapFunction() {
         Map<String, String> map = Maps.newHashMap();
         map.put(CountryEnum.CHINA.getName(), CountryEnum.CHINA.getCapital());
         map.put(CountryEnum.US.getName(), CountryEnum.US.getCapital());
@@ -93,7 +93,7 @@ public class CountryService {
         countries.add(CountryEnum.CHINA.getName());
         countries.add(CountryEnum.US.getName());
 
-        Collection<String> capitals = Collections2.transform(countries, capitalNameFromCountryFunction);
+        List<String> capitals = Lists.transform(countries, capitalNameFromCountryFunction);
         return capitals;
     }
 

@@ -21,7 +21,7 @@ public class CountryService {
      *
      * @return
      */
-    public List<String> findCapitalsInUpperCase() {
+    public List<String> transformCapitalsInUpperCase() {
         Function<Country, String> capitalCityFunction = new Function<Country, String>() {
             @Override
             public String apply(@Nullable Country country) {

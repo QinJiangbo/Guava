@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.Console;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -24,6 +25,22 @@ public class FunctionTest {
     @Test
     public void testTransformFunction() {
         List<String> capitalList = countryService.transformCapitalsInUpperCase();
+        for (String capital : capitalList) {
+            System.out.println(capital);
+        }
+    }
+
+    @Test
+    public void testComposeFunction() {
+        List<String> capitalList = countryService.composeTwoFunctions();
+        for (String capital : capitalList) {
+            System.out.println(capital);
+        }
+    }
+
+    @Test
+    public void testForMapFunction() {
+        Collection<String> capitalList = countryService.forMapFunction();
         for (String capital : capitalList) {
             System.out.println(capital);
         }

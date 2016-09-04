@@ -21,7 +21,7 @@ public class FunctionTest {
     }
 
     @Test
-    public void testFunction1() {
+    public void testTransformFunction() {
         List<String> capitalList = countryService.transformCapitalsInUpperCase();
         for (String capital : capitalList) {
             System.out.println(capital);

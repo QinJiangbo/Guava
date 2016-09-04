@@ -18,7 +18,6 @@ public class CountryService {
 
     /**
      * 查找每个国家的首都信息
-     *
      * @return
      */
     public List<String> transformCapitalsInUpperCase() {
@@ -28,12 +27,42 @@ public class CountryService {
                 if (country == null) {
                     return null;
                 }
-                return country.getCapital();
+                return country.getCapital().toUpperCase();
             }
         };
 
         List<String> capitalList = Lists.transform(countryList.findCountries(), capitalCityFunction);
-
         return capitalList;
     }
+
+    /**
+     * 查找每个国家的首都信息并将其转换为大写以及倒排
+     *
+     * @return
+     */
+    public List<String> composeTwoFunctions() {
+        Function<Country, String> upperCaseFunction = new Function<Country, String>() {
+            @Override
+            public String apply(@Nullable Country country) {
+                if (country == null) {
+                    return "";
+                }
+                return country.getCapital().toUpperCase();
+            }
+        };
+
+        Function<String, String> reverseFunction = new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                if (s == null) {
+                    return null;
+                }
+                return new StringBuilder(s).reverse().toString();
+            }
+        };
+
+
+    }
+
+
 }

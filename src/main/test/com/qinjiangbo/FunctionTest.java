@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.Console;
 import java.util.List;
 
 /**
@@ -27,4 +28,5 @@ public class FunctionTest {
             System.out.println(capital);
         }
     }
+
 }

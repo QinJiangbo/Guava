@@ -1,6 +1,7 @@
 package com.qinjiangbo.service;
 
 import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.collect.Lists;
 import com.qinjiangbo.pojo.Country;
 import com.qinjiangbo.vo.CountryList;
@@ -41,6 +42,7 @@ public class CountryService {
      * @return
      */
     public List<String> composeTwoFunctions() {
+        //改为大写
         Function<Country, String> upperCaseFunction = new Function<Country, String>() {
             @Override
             public String apply(@Nullable Country country) {
@@ -51,6 +53,7 @@ public class CountryService {
             }
         };
 
+        //倒排名称
         Function<String, String> reverseFunction = new Function<String, String>() {
             @Override
             public String apply(String s) {
@@ -60,8 +63,11 @@ public class CountryService {
                 return new StringBuilder(s).reverse().toString();
             }
         };
-        return null;
-    }
 
+        //混合方法
+        Function<Country, String> composeFunction = Functions.compose(reverseFunction, upperCaseFunction);
+        List<String> capitals = Lists.transform(countryList.findCountries(), composeFunction);
+        return capitals;
+    }
 
 }

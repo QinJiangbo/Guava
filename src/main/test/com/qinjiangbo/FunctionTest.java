@@ -1,14 +1,9 @@
 package com.qinjiangbo;
 
 import com.qinjiangbo.service.CountryService;
-import com.qinjiangbo.vo.CountryEnum;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.Console;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 /**

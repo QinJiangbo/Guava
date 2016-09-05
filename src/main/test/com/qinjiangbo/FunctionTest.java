@@ -43,4 +43,12 @@ public class FunctionTest {
         }
     }
 
+    @Test
+    public void testForMapFunction2() {
+        List<String> capitalList = countryService.forMapFunction2();
+        for (String city : capitalList) {
+            System.out.println(city);
+        }
+    }
+
 }

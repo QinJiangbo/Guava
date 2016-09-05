@@ -97,4 +97,25 @@ public class CountryService {
         return capitals;
     }
 
+    /**
+     * forMap函数测试二
+     *
+     * @return
+     */
+    public List<String> forMapFunction2() {
+        Map<String, String> map = Maps.newHashMap();
+        map.put(CountryEnum.CHINA.getName(), CountryEnum.CHINA.getCapital());
+        map.put(CountryEnum.US.getName(), CountryEnum.US.getCapital());
+        map.put(CountryEnum.KOREA.getName(), CountryEnum.KOREA.getCapital());
+
+        Function<String, String> capitalNameFromCountryName = Functions.forMap(map, "Unknown");
+
+        List<String> countries = Lists.newArrayList();
+        countries.add(CountryEnum.CHINA.getName());
+        countries.add(CountryEnum.GB.getName());
+
+        List<String> capitals = Lists.transform(countries, capitalNameFromCountryName);
+        return capitals;
+    }
+
 }

@@ -8,7 +8,8 @@ public enum CountryEnum {
     CHINA("CHINA", "BEIJING", 2000),
     US("US", "WASHINGTON DC", 200),
     KOREA("KOREA", "SEUL", 500),
-    GB("GB", "LONDON", 1000);
+    GB("GB", "LONDON", 1000),
+    FINLAND("FINLAND", "", 1000);
 
     private String name;
     private String capital;

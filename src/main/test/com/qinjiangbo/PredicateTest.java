@@ -30,5 +30,8 @@ public class PredicateTest {
         System.out.println(allCountriesSpecifyCapital);
     }
 
+    @Test
+    public void testComposedPredicate() {
 
+    }
 }

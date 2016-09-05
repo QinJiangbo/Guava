@@ -43,7 +43,9 @@ public class FunctionTest {
     @Test
     public void testForMapFunction() {
         List<String> capitalList = countryService.forMapFunction();
-        System.out.println(capitalList.contains(CountryEnum.CHINA.getCapital()));
+        for (String city : capitalList) {
+            System.out.println(city);
+        }
     }
 
 }

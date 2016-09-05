@@ -15,9 +15,9 @@ public enum CountryEnum {
     private int age;
 
     private CountryEnum(String name, String capital, int age) {
-        name = name;
-        capital = capital;
-        age = age;
+        this.name = name;
+        this.capital = capital;
+        this.age = age;
     }
 
 

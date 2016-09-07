@@ -72,4 +72,24 @@ public class PredicateTest {
         System.out.println(CharMatcher.noneOf("xZ").matchesAnyOf("anything"));
     }
 
+    @Test
+    public void testMatchAny() {
+        System.out.println(CharMatcher.ANY.matchesAllOf("anything"));
+    }
+
+    @Test
+    public void testMatchBreakingWhiteSpace() {
+        System.out.println(CharMatcher.BREAKING_WHITESPACE.matchesAllOf("\r\n\r\n"));
+    }
+
+    @Test
+    public void testMatchDigits() {
+        System.out.println(CharMatcher.DIGIT.matchesAllOf("1212121"));
+    }
+
+    @Test
+    public void testMatchDigits2() {
+        System.out.println(CharMatcher.DIGIT.matchesAnyOf("123abc123"));
+    }
+
 }

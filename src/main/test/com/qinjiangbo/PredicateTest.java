@@ -137,4 +137,14 @@ public class PredicateTest {
         System.out.println(CharMatcher.DIGIT.or(CharMatcher.JAVA_LETTER).retainFrom("hello 123 abc!"));
     }
 
+    @Test
+    public void testMatchCollapseAllDigitsByX() {
+        System.out.println(CharMatcher.DIGIT.collapseFrom("Hello 167 j176", 'x'));
+    }
+
+    @Test
+    public void testMatchReplaceAllDigitsByX() {
+        System.out.println(CharMatcher.DIGIT.replaceFrom("Hello 17689 jik009", 'x'));
+    }
+
 }

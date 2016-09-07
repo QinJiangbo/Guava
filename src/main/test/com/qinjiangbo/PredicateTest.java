@@ -59,4 +59,11 @@ public class PredicateTest {
         }
     }
 
+    @Test
+    public void testContainsPredicate() {
+        Predicate<CharSequence> containsPredicate = Predicates.containsPattern("\\d\\d");
+        boolean isContained = containsPredicate.apply("hello world 21!");
+        System.out.println(isContained);
+    }
+
 }

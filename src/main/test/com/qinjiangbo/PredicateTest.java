@@ -92,4 +92,29 @@ public class PredicateTest {
         System.out.println(CharMatcher.DIGIT.matchesAnyOf("123abc123"));
     }
 
+    @Test
+    public void testMatchJavaDigits() {
+        System.out.println(CharMatcher.JAVA_DIGIT.matchesAllOf("123456"));
+    }
+
+    @Test
+    public void testMatchJavaLetter() {
+        System.out.println(CharMatcher.JAVA_LETTER.matchesAllOf("Opera"));
+    }
+
+    @Test
+    public void testMatchAscii() {
+        System.out.println(CharMatcher.ASCII.matchesAllOf("azt*1"));
+    }
+
+    @Test
+    public void testMatchUpperCase() {
+        System.out.println(CharMatcher.JAVA_UPPER_CASE.matchesAllOf("JAVAC"));
+    }
+
+    @Test
+    public void testMatchDigitsWithWhiteSpaces() {
+        System.out.println(CharMatcher.DIGIT.matchesAnyOf("1111 abc"));
+    }
+
 }

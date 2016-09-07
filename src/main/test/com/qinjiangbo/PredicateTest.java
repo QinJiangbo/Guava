@@ -1,5 +1,6 @@
 package com.qinjiangbo;
 
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
@@ -64,6 +65,11 @@ public class PredicateTest {
         Predicate<CharSequence> containsPredicate = Predicates.containsPattern("\\d\\d");
         boolean isContained = containsPredicate.apply("hello world 21!");
         System.out.println(isContained);
+    }
+
+    @Test
+    public void testNotMatchChar() {
+        System.out.println(CharMatcher.noneOf("xZ").matchesAnyOf("anything"));
     }
 
 }

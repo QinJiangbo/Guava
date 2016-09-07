@@ -137,5 +137,4 @@ public class PredicateTest {
         System.out.println(CharMatcher.DIGIT.or(CharMatcher.JAVA_LETTER).retainFrom("hello 123 abc!"));
     }
 
-
 }

@@ -117,4 +117,24 @@ public class PredicateTest {
         System.out.println(CharMatcher.DIGIT.matchesAnyOf("1111 abc"));
     }
 
+    @Test
+    public void testMatchRetainsDigits() {
+        System.out.println(CharMatcher.DIGIT.retainFrom("123gb6789"));
+    }
+
+    @Test
+    public void testMatchRetainsDigitsOrWhiteSpaces() {
+        System.out.println(CharMatcher.DIGIT.or(CharMatcher.WHITESPACE).retainFrom("Hello world 123 javac!"));
+    }
+
+    @Test
+    public void testMatchRetainsNothingAsConstrainsAreExcluding() {
+        System.out.println(CharMatcher.DIGIT.and(CharMatcher.JAVA_LETTER).retainFrom("hello 123 abc!"));
+    }
+
+    @Test
+    public void testMatchRetainsDigitsAndLetters() {
+        System.out.println(CharMatcher.DIGIT.or(CharMatcher.JAVA_LETTER).retainFrom("hello 123 abc!"));
+    }
+
 }

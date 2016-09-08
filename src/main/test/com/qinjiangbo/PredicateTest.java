@@ -149,7 +149,7 @@ public class PredicateTest {
 
     @Test
     public void testMatchReplaceAllLettersByX() {
-        System.out.println(CharMatcher.JAVA_LETTER.replaceFrom("password 97321321 **65", 'X'));
+        System.out.println(CharMatcher.JAVA_LETTER.or(CharMatcher.is('*')).replaceFrom("password 97321321 **65", 'X'));
     }
 
 }

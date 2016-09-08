@@ -182,4 +182,24 @@ public class PredicateTest {
         System.out.println(CharMatcher.inRange('3', '8').negate().removeFrom("117787321daa096aa453aa299"));
     }
 
+    @Test
+    public void testRemoveStartingAndEndingDollarsAndKeepOthersUnchanged() {
+        System.out.println(CharMatcher.is('$').trimFrom("$$$ This is a $ sign $$$"));
+    }
+
+    @Test
+    public void testRemoveOnlyStartingDollarsAndKeepOthersUnchanged() {
+        System.out.println(CharMatcher.is('$').trimLeadingFrom("$$$ This is a $ sign $$$"));
+    }
+
+    @Test
+    public void testRemoveOnlyEndingDollarsAndKeepOthersUnchanged() {
+        System.out.println(CharMatcher.is('$').trimTrailingFrom("$$$ This is a $ sign $$$"));
+    }
+
+    @Test
+    public void testRemoveStartingAndEndingDollarsAndReplaceOtherDollarsWithX() {
+        System.out.println(CharMatcher.is('$').trimAndCollapseFrom("$$$ This is a $$ and $ sign $$$", 'X'));
+    }
+
 }

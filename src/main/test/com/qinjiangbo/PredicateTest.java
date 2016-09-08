@@ -147,4 +147,9 @@ public class PredicateTest {
         System.out.println(CharMatcher.DIGIT.replaceFrom("Hello 17689 jik009", 'x'));
     }
 
+    @Test
+    public void testMatchReplaceAllLettersByX() {
+        System.out.println(CharMatcher.JAVA_LETTER.replaceFrom("password 97321321 **65", 'X'));
+    }
+
 }

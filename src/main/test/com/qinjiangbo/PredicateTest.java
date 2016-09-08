@@ -167,4 +167,19 @@ public class PredicateTest {
         System.out.println(CharMatcher.is('*').indexIn("666 *** 121 * a ** b"));
     }
 
+    @Test
+    public void testMatchLastIndexIn() {
+        System.out.println(CharMatcher.is('*').lastIndexIn("666 *** 121 * a ** b"));
+    }
+
+    @Test
+    public void testMatchRemoveDigitsBetween3And6() {
+        System.out.println(CharMatcher.inRange('3', '8').removeFrom("117787321daa096aa453aa299"));
+    }
+
+    @Test
+    public void testNegateMatchingAbove() {
+        System.out.println(CharMatcher.inRange('3', '8').negate().removeFrom("117787321daa096aa453aa299"));
+    }
+
 }

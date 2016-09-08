@@ -152,4 +152,19 @@ public class PredicateTest {
         System.out.println(CharMatcher.JAVA_LETTER.or(CharMatcher.is('*')).replaceFrom("password 97321321 **65", 'X'));
     }
 
+    @Test
+    public void testMatchCountIn() {
+        System.out.println(CharMatcher.DIGIT.countIn("*** 121 * a ** b"));
+    }
+
+    @Test
+    public void testMatchCountIn2() {
+        System.out.println(CharMatcher.is('*').countIn("*** 121 * a ** b"));
+    }
+
+    @Test
+    public void testMatchIndexIn() {
+        System.out.println(CharMatcher.is('*').indexIn("666 *** 121 * a ** b"));
+    }
+
 }

@@ -1,16 +1,15 @@
 package com.qinjiangbo;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
-import com.google.common.base.Strings;
+import com.google.common.base.*;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.qinjiangbo.vo.CountryEnum;
 import com.sun.istack.internal.Nullable;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Date: 9/5/16
@@ -200,6 +199,24 @@ public class PredicateTest {
     @Test
     public void testRemoveStartingAndEndingDollarsAndReplaceOtherDollarsWithX() {
         System.out.println(CharMatcher.is('$').trimAndCollapseFrom("$$$ This is a $$ and $ sign $$$", 'X'));
+    }
+
+    @Test
+    public void testJoinerOn() {
+        List<String> languages = Arrays.asList("Java", "Haskell", "Scala", "Brainfuck");
+        System.out.println(Joiner.on(',').join(languages));
+    }
+
+    @Test
+    public void testJoinerJoinWithCommasAndOmitNulls() {
+        List<String> countriesWithNullValue = Arrays.asList("Poland", "Brazil", "Ukraine", null, "China");
+        System.out.println(Joiner.on(',').skipNulls().join(countriesWithNullValue));
+    }
+
+    @Test
+    public void testJoinerJoinWithCommasAndReplaceNullWithDefaultValue() {
+        List<String> countriesWithNullValue = Arrays.asList("Poland", "Brazil", "Ukraine", null, "China");
+        System.out.println(Joiner.on(',').useForNull("NONE").join(countriesWithNullValue));
     }
 
 }

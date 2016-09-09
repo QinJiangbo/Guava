@@ -1,6 +1,6 @@
 package com.qinjiangbo.pojo;
 
-import java.util.Objects;
+import com.google.common.base.Objects;
 
 /**
  * Date: 9/2/16
@@ -52,14 +52,21 @@ public class Country {
         if (o == null) return false;
         if (!(o instanceof Country)) return false;
         Country country = (Country) o;
-        return Objects.equals(name, country.getName())
-                && Objects.equals(time, country.getTime())
-                && Objects.equals(capital, country.getCapital());
+        return Objects.equal(name, country.getName())
+                && Objects.equal(time, country.getTime())
+                && Objects.equal(capital, country.getCapital());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, time, capital);
+        return Objects.hashCode(name, time, capital);
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).add("name", name)
+                .add("time", time)
+                .add("capital", capital).toString();
     }
 
 }

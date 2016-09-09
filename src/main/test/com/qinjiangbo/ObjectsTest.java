@@ -1,5 +1,6 @@
 package com.qinjiangbo;
 
+import com.google.common.base.Objects;
 import com.qinjiangbo.pojo.Country;
 import org.junit.Test;
 
@@ -21,5 +22,19 @@ public class ObjectsTest {
         Country country = new Country("CHINA", 2000, "BEIJING");
         System.out.println(country.hashCode());
     }
+
+    @Test
+    public void testObjectsToString() {
+        Country country = new Country("CHINA", 2000, "BEIJING");
+        System.out.println(country.toString());
+    }
+
+    @Test
+    public void testObjectsFirstNonNull() {
+        String name = null;
+        String nickName = "Richard";
+        System.out.println(Objects.firstNonNull(nickName, name));
+    }
+
 
 }

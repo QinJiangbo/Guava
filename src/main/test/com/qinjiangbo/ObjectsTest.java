@@ -36,5 +36,4 @@ public class ObjectsTest {
         System.out.println(Objects.firstNonNull(nickName, name));
     }
 
-
 }

@@ -232,9 +232,4 @@ public class PredicateTest {
         System.out.println(Joiner.on(" | ").withKeyValueSeparator(" -> ").useForNull("Unknown").join(numberWords));
     }
 
-    @Test
-    public void testObjectsEquals() {
-        Country country = new Country();
-    }
-
 }

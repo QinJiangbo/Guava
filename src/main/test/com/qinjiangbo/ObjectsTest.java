@@ -15,4 +15,11 @@ public class ObjectsTest {
         Country country2 = new Country("CHINA", 2000, "BEIJING");
         System.out.println(country.equals(country2));
     }
+
+    @Test
+    public void testObjectsHash() {
+        Country country = new Country("CHINA", 2000, "BEIJING");
+        System.out.println(country.hashCode());
+    }
+
 }

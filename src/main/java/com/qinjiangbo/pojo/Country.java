@@ -57,5 +57,9 @@ public class Country {
                 && Objects.equals(capital, country.getCapital());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, time, capital);
+    }
 
 }

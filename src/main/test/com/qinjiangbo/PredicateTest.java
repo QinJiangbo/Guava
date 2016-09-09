@@ -4,6 +4,7 @@ import com.google.common.base.*;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.qinjiangbo.pojo.Country;
 import com.qinjiangbo.vo.CountryEnum;
 import com.sun.istack.internal.Nullable;
 import org.junit.Test;
@@ -229,6 +230,11 @@ public class PredicateTest {
         numberWords.put(3, null);
         numberWords.put(4, "four");
         System.out.println(Joiner.on(" | ").withKeyValueSeparator(" -> ").useForNull("Unknown").join(numberWords));
+    }
+
+    @Test
+    public void testObjectsEquals() {
+        Country country = new Country();
     }
 
 }

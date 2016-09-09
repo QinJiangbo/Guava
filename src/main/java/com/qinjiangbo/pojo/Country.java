@@ -1,5 +1,7 @@
 package com.qinjiangbo.pojo;
 
+import java.util.Objects;
+
 /**
  * Date: 9/2/16
  * Author: qinjiangbo@github.io
@@ -43,4 +45,17 @@ public class Country {
     public void setCapital(String capital) {
         this.capital = capital;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (!(o instanceof Country)) return false;
+        Country country = (Country) o;
+        return Objects.equals(name, country.getName())
+                && Objects.equals(time, country.getTime())
+                && Objects.equals(capital, country.getCapital());
+    }
+
+
 }

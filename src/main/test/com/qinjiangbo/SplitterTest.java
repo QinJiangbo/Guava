@@ -18,4 +18,11 @@ public class SplitterTest {
         List<String> splittedList = Lists.newArrayList(iterable);
         System.out.println(splittedList.get(2).equals("Php"));
     }
+
+    @Test
+    public void testSplitOnRegExp() {
+        Iterable<String> iterable = Splitter.onPattern("\\d+").split("Java3Scala4Php5C#6");
+        List<String> splittedList = Lists.newArrayList(iterable);
+        System.out.println(splittedList.get(2).equals("Php"));
+    }
 }

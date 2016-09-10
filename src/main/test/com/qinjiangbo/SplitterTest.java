@@ -48,6 +48,11 @@ public class SplitterTest {
         System.out.println(splittedList.get(2));
     }
 
-
+    @Test
+    public void testSplitOnFixedLength() {
+        Iterable<String> iterable = Splitter.fixedLength(7).split("Someone once told me that I was lucky!");
+        List<String> splittedList = Lists.newArrayList(iterable);
+        System.out.println(splittedList.get(1));
+    }
 
 }

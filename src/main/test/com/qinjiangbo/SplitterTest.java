@@ -34,4 +34,20 @@ public class SplitterTest {
         System.out.println(splittedList.get(2));
     }
 
+    @Test
+    public void testSplitOmitEmptyStrings() {
+        Iterable<String> iterable = Splitter.on(";").omitEmptyStrings().split("Java;Scala; ;;Haskell;;Kotlin");
+        List<String> splittedList = Lists.newArrayList(iterable);
+        System.out.println(splittedList.get(2));
+    }
+
+    @Test
+    public void testSplitTrimResults() {
+        Iterable<String> iterable = Splitter.on(";").trimResults().omitEmptyStrings().split("Java;Scala; ;;Haskell;;Kotlin");
+        List<String> splittedList = Lists.newArrayList(iterable);
+        System.out.println(splittedList.get(2));
+    }
+
+
+
 }

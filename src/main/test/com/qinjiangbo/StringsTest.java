@@ -18,4 +18,14 @@ public class StringsTest {
     public void testNullOrEmptyString2() {
         System.out.println(Strings.isNullOrEmpty(null));
     }
+
+    @Test
+    public void testStringsPadEnd() {
+        System.out.println(Strings.padEnd("Hello World", 20, '-'));
+    }
+
+    @Test
+    public void testStringsPadStart() {
+        System.out.println(Strings.padStart("Hello World", 20, '*'));
+    }
 }

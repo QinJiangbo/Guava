@@ -28,4 +28,9 @@ public class StringsTest {
     public void testStringsPadStart() {
         System.out.println(Strings.padStart("Hello World", 20, '*'));
     }
+
+    @Test
+    public void testStringsRepeat() {
+        System.out.println(Strings.repeat("I love you!\n", 20));
+    }
 }

@@ -18,6 +18,9 @@ public class StopWatchTest {
         Thread.sleep(2000l);
         stopwatch.stop();
         System.out.println(stopwatch.elapsed(TimeUnit.SECONDS));
+        System.out.println(stopwatch.elapsed(TimeUnit.NANOSECONDS));
+        System.out.println(stopwatch.elapsed(TimeUnit.MICROSECONDS));
+        System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
 }

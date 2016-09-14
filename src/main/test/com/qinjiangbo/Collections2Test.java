@@ -59,6 +59,7 @@ public class Collections2Test {
 
     }
 
+    // "VIEW" OF THE PASSED COLLECTIONS?
     @Test
     public void testShowThatResultIsOnlyAView() {
         ArrayList<CountryEnum> countries = Lists.newArrayList(CountryEnum.CHINA, CountryEnum.FINLAND, CountryEnum.KOREA);

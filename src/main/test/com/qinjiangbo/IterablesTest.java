@@ -78,5 +78,13 @@ public class IterablesTest {
         System.out.println(frequency);
     }
 
+    @Test
+    public void testGetFirstAndLast() {
+        List<Integer> numbersList = Lists.newArrayList(11, 2, 3, 6, -9, 4, -3, -9, 7, 6);
+        Integer first = Iterables.getFirst(numbersList, 3);
+        Integer last = Iterables.getLast(numbersList, -9);
+        System.out.println(first + "---" + last);
+    }
+
 
 }

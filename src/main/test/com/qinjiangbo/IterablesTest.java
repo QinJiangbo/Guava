@@ -71,5 +71,12 @@ public class IterablesTest {
         });
     }
 
-    
+    @Test
+    public void testCountElementsInIterable() {
+        List<Integer> numberList = Lists.newArrayList(1, 2, 3, 6, -9, 4, -3, -9, 7, 6);
+        int frequency = Iterables.frequency(numberList, -9);
+        System.out.println(frequency);
+    }
+
+
 }

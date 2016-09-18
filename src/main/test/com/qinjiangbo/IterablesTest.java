@@ -86,5 +86,10 @@ public class IterablesTest {
         System.out.println(first + "---" + last);
     }
 
-
+    @Test
+    public void testPartition() {
+        List<Integer> numbersList = Lists.newArrayList(11, 2, 3, 6, -9, 4, -3, -9, 7, 6);
+        Iterable<List<Integer>> partitionedLists = Iterables.partition(numbersList, 5);
+        System.out.println(Iterables.size(partitionedLists));
+    }
 }

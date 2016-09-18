@@ -92,4 +92,25 @@ public class IterablesTest {
         Iterable<List<Integer>> partitionedLists = Iterables.partition(numbersList, 5);
         System.out.println(Iterables.size(partitionedLists));
     }
+
+    @Test
+    public void testConvertArray() {
+        List<Integer> numbersList = Lists.newArrayList(11, 2, 3, 6, -9, 4, -3, -9, 7, 6);
+        Number[] numbers = Iterables.toArray(numbersList, Number.class);
+        Number[] numbersWithTraditionalWay = numbersList.toArray(new Number[]{});
+        System.out.println(numbers[0]);
+        System.out.println(numbersWithTraditionalWay[1]);
+    }
+
+    @Test
+    public void testRemoveIf() {
+        List<Integer> numbersList = Lists.newArrayList(11, 2, 3, 6, -9, 4, -3, -9, 7, 6);
+        Iterables.removeIf(numbersList, new Predicate<Integer>() {
+            @Override
+            public boolean apply(@Nullable Integer input) {
+                return input < 0;
+            }
+        });
+        System.out.println(numbersList.size());
+    }
 }

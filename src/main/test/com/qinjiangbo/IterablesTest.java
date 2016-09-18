@@ -8,6 +8,8 @@ import com.sun.istack.internal.Nullable;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Date: 9/18/16
@@ -53,4 +55,21 @@ public class IterablesTest {
         }
         System.out.println(iterator.next());
     }
+
+    @Test
+    public void testFilterOnlyLongs() {
+        List<Number> numbersList = Lists.newArrayList();
+        numbersList.add(1L);
+        numbersList.add(11);
+        numbersList.add(2L);
+        Iterable<Long> filterList = Iterables.filter(numbersList, Long.class);
+        filterList.forEach(new Consumer<Long>() {
+            @Override
+            public void accept(Long aLong) {
+                System.out.println(aLong);
+            }
+        });
+    }
+
+    
 }

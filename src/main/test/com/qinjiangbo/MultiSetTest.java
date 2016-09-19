@@ -17,4 +17,18 @@ public class MultiSetTest {
         multiset.add("one");
         System.out.println(multiset.count("one"));
     }
+
+    @Test
+    public void testUserCustomAddRemoveAndSetCount() {
+        Multiset<String> multiset = HashMultiset.create();
+        multiset.add("ball");
+        multiset.add("ball", 10);
+        System.out.println(multiset.count("ball"));
+
+        multiset.remove("ball", 5);
+        System.out.println(multiset.count("ball"));
+
+        multiset.setCount("ball", 8);
+        System.out.println(multiset.count("ball"));
+    }
 }

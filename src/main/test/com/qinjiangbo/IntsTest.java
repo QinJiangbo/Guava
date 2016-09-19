@@ -16,4 +16,18 @@ public class IntsTest {
         System.out.println(Ints.contains(array1, 49));
         System.out.println(Ints.indexOf(array2, 4));
     }
+
+    @Test
+    public void testConcatArrays() {
+        final int[] array1 = new int[]{0, 15, 4, 49};
+        final int[] array2 = new int[]{5, 2, 4, -18, 450};
+        System.out.println(Ints.concat(array1, array2).length);
+    }
+
+    @Test
+    public void testJoinArrayUsingSeprator() {
+        final int[] array1 = new int[]{0, 15, 4, 49};
+        final int[] array2 = new int[]{5, 2, 4, -18, 450};
+        System.out.println(Ints.join(" : ", array2));
+    }
 }

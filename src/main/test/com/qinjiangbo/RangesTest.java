@@ -1,8 +1,12 @@
 package com.qinjiangbo;
 
+import com.google.common.collect.DiscreteDomain;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * Date: 9/19/16
@@ -35,5 +39,20 @@ public class RangesTest {
         System.out.println(range.containsAll(Lists.newArrayList(10, 20, 18, 8, 5, 19)));
     }
 
+    @Test
+    public void testGenerateSetOfElementInRange() {
+        Range<Integer> range = Range.open(2, 20);
+        Range<Integer> integers = range.canonical(DiscreteDomain.integers());
+        System.out.println(integers);
+        System.out.println(integers.contains(6));
+        System.out.println(integers.contains(7));
+    }
 
+    @Test
+    public void testCreateRangeForGivenNumbers() {
+        ArrayList<Integer> numbers = Lists.newArrayList(4, 3, 6, 8, 5, 9);
+        Range<Integer> range = Range.encloseAll(numbers);
+        System.out.println(range.lowerEndpoint() == 3);
+        System.out.println(range.upperEndpoint() == 9);
+    }
 }

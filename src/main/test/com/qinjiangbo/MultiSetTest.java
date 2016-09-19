@@ -4,6 +4,8 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * Date: 9/19/16
  * Author: qinjiangbo@github.io
@@ -30,5 +32,19 @@ public class MultiSetTest {
 
         multiset.setCount("ball", 8);
         System.out.println(multiset.count("ball"));
+    }
+
+    @Test
+    public void testRetainOnlySelectedKeys() {
+        Multiset<String> multiset = HashMultiset.create();
+        multiset.add("ball");
+        multiset.add("ball");
+        multiset.add("cow");
+        multiset.setCount("twelve", 12);
+
+        multiset.retainAll(Arrays.asList("ball", "horse"));
+
+        System.out.println("cow " + multiset.count("cow"));
+        System.out.println("ball " + multiset.count("ball"));
     }
 }

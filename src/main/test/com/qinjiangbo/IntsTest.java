@@ -30,4 +30,11 @@ public class IntsTest {
         final int[] array2 = new int[]{5, 2, 4, -18, 450};
         System.out.println(Ints.join(" : ", array2));
     }
+
+    @Test
+    public void testFindMaxAndMinInArray() {
+        final int[] array = new int[]{5, 2, 4, -18, 450};
+        System.out.println(Ints.min(array));
+        System.out.println(Ints.max(array));
+    }
 }

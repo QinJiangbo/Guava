@@ -22,6 +22,8 @@ public class MultiMapTest {
         multimap.put("US", "Seattle");
         multimap.put("US", "Brooklyn");
 
-        System.out.println("size:" + multimap.size());
+        System.out.println("size: " + multimap.size());
+        System.out.println("elements list: " + multimap.get("China"));
+        System.out.println("keys length: " + multimap.keys().size());
     }
 }

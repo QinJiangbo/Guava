@@ -17,4 +17,20 @@ public class ObjectArraysTest {
         System.out.println(array3.length);
         System.out.println("array3[2] => " + array3[2]);
     }
+
+    @Test
+    public void testAppendElement() {
+        String[] array1 = new String[]{"one", "two", "three"};
+        String[] array2 = new String[]{"four", "five"};
+        String[] array3 = ObjectArrays.concat(array2, "six");
+        System.out.println(array3[2]);
+    }
+
+    @Test
+    public void testPrependElement() {
+        String[] array1 = new String[]{"one", "two", "three"};
+        String[] array2 = new String[]{"four", "five"};
+        String[] array3 = ObjectArrays.concat("zero", array1);
+        System.out.println(array3[0]);
+    }
 }

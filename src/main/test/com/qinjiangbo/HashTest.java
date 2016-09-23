@@ -45,6 +45,11 @@ public class HashTest {
         System.out.println("ip3: " + Hashing.consistentHash(ipHashCode3, 3));
     }
 
+    @Test
+    public void testGoodFastHash() {
+        System.out.println(Hashing.goodFastHash(1));
+    }
+
     class Student {
         final long sid;
         final int age;

@@ -52,6 +52,7 @@ public class HashTest {
         System.out.println(Hashing.goodFastHash(100));
         System.out.println(Hashing.goodFastHash(1000));
         System.out.println(Hashing.goodFastHash(10000));
+        System.out.println(Hashing.goodFastHash(100000));
     }
 
     class Student {

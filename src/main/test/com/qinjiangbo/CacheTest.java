@@ -5,4 +5,5 @@ package com.qinjiangbo;
  * Author: qinjiangbo@github.io
  */
 public class CacheTest {
+
 }

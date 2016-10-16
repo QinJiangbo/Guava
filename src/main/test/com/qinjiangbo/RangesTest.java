@@ -76,6 +76,5 @@ public class RangesTest {
         System.out.println("rangeSet: " + rangeSet);
         rangeSet.add(Range.open(15, 20));
         System.out.println("rangeSet: " + rangeSet);
-
     }
 }

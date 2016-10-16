@@ -18,7 +18,7 @@ import java.util.Iterator;
  * Date: 9/14/16
  * Author: qinjiangbo@github.io
  */
-public class Collections2Test {
+public class CollectionsTest {
 
     @Test
     public void testTransformCollection() {

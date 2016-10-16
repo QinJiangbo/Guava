@@ -41,6 +41,7 @@ public class CacheTest {
                 .newBuilder()
                 .maximumSize(1000)
                 .build();
+        //Callable只有在缓存值不存在或者为空时，才会调用
         String retriValue = cache.get("name", new Callable<String>() {
             @Override
             public String call() throws Exception {

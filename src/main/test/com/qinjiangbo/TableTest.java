@@ -1,7 +1,6 @@
 package com.qinjiangbo;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
+import com.google.common.collect.*;
 import org.junit.Test;
 
 /**
@@ -11,7 +10,7 @@ import org.junit.Test;
 public class TableTest {
 
     @Test
-    public void testTable() {
+    public void testHashTable() {
         Table<String, Integer, String> table = HashBasedTable.create();
 
         for (char a = 'A'; a <= 'C'; ++a) {
@@ -30,4 +29,14 @@ public class TableTest {
         System.out.println(table.columnMap());
         System.out.println(table.rowMap());
     }
+
+    @Test
+    public void testArrayTable() {
+        Table<String, Integer, String> table = ArrayTable.create(Lists.newArrayList("A", "B", "C"), Lists.newArrayList(1, 2, 3));
+        table.put("A", 2, "A2");
+        table.put("B", 1, "B1");
+        System.out.println(table.column(2));
+        System.out.println(table.row("B"));
+    }
+
 }

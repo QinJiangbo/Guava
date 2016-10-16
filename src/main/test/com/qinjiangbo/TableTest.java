@@ -39,4 +39,14 @@ public class TableTest {
         System.out.println(table.row("B"));
     }
 
+    @Test
+    public void testTreeBasedTable() {
+        Table<String, Integer, String> table = TreeBasedTable.create();
+        table.put("A", 1, "A");
+        table.put("C", 1, "E");
+        table.put("B", 1, "D");
+        System.out.println(table.column(1));
+        System.out.println(table.row("C"));
+    }
+
 }

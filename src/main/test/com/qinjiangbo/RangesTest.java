@@ -1,8 +1,6 @@
 package com.qinjiangbo;
 
-import com.google.common.collect.DiscreteDomain;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Range;
+import com.google.common.collect.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -54,5 +52,30 @@ public class RangesTest {
         Range<Integer> range = Range.encloseAll(numbers);
         System.out.println(range.lowerEndpoint() == 3);
         System.out.println(range.upperEndpoint() == 9);
+    }
+
+    @Test
+    public void testRangeMap() {
+        RangeMap<Integer, String> rangeMap = TreeRangeMap.create();
+        rangeMap.put(Range.closed(1, 19), "foo");
+        System.out.println("rangeMap: " + rangeMap);
+        rangeMap.put(Range.open(3, 6), "bar");
+        System.out.println("rangeMap: " + rangeMap);
+        rangeMap.put(Range.open(10, 20), "foo");
+        System.out.println("rangeMap: " + rangeMap);
+        rangeMap.remove(Range.closed(5, 11));
+        System.out.println("rangeMap: " + rangeMap);
+    }
+
+    @Test
+    public void testRangeSet() {
+        RangeSet<Integer> rangeSet = TreeRangeSet.create();
+        rangeSet.add(Range.closed(1, 10));
+        System.out.println("rangeSet: " + rangeSet);
+        rangeSet.add(Range.closedOpen(11, 15));
+        System.out.println("rangeSet: " + rangeSet);
+        rangeSet.add(Range.open(15, 20));
+        System.out.println("rangeSet: " + rangeSet);
+
     }
 }

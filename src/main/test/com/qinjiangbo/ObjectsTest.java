@@ -42,4 +42,11 @@ public class ObjectsTest {
         System.out.println(Objects.equal("a", "b"));
     }
 
+    @Test
+    public void testObjectsEquals3() {
+        Country country = new Country("CHINA", 2000, "BEIJING");
+        Country country2 = new Country("CHINA", 2000, "BEIJING");
+        System.out.println(Objects.equal(country, country2));
+    }
+
 }

@@ -33,6 +33,7 @@ public class ObjectsTest {
     public void testObjectsFirstNonNull() {
         String name = null;
         String nickName = "Richard";
+        /* 貌似这个方法目前不支持了 */
         System.out.println(Objects.firstNonNull(nickName, name));
     }
 

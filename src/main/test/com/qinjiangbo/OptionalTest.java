@@ -3,6 +3,8 @@ package com.qinjiangbo;
 import com.google.common.base.Optional;
 import org.junit.Test;
 
+import java.util.Set;
+
 /**
  * Date: 19/10/2016
  * Author: qinjiangbo@github.io
@@ -39,5 +41,28 @@ public class OptionalTest {
         if (optional4.isPresent()) {
             System.out.println("Optional4 is " + optional4.get());
         }
+    }
+
+    @Test
+    public void testOptional3() {
+        Optional<String> name = getNameListFromDB(null);
+        if (name.isPresent()) {
+            System.out.println("name: " + name.get());
+        }
+        System.out.println("orNull: " + name.orNull());
+        Optional<String> address = getNameListFromDB("Wuhan Bayi Road");
+        Set<String> set = address.asSet();
+        System.out.println("toString: " + set.toString());
+        System.out.println("size: " + set.size());
+    }
+
+    /**
+     * 获得这个Optional返回类型
+     *
+     * @param DB
+     * @return
+     */
+    private Optional<String> getNameListFromDB(String DB) {
+        return Optional.fromNullable(DB);
     }
 }

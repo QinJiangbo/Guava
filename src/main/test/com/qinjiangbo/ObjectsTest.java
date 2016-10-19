@@ -37,4 +37,9 @@ public class ObjectsTest {
         System.out.println(Objects.firstNonNull(nickName, name));
     }
 
+    @Test
+    public void testObjectsEquals2() {
+        System.out.println(Objects.equal("a", "b"));
+    }
+
 }

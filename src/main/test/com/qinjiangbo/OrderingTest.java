@@ -1,7 +1,6 @@
 package com.qinjiangbo;
 
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import org.junit.Test;

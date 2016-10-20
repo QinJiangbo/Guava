@@ -1,11 +1,14 @@
 package com.qinjiangbo;
 
+import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import org.junit.Test;
 
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Date: 20/10/2016
@@ -68,6 +71,22 @@ public class OrderingTest {
         System.out.println(ordering.binarySearch(
                 Lists.newArrayList(14, 18, 19, 45, 76, 78), 45)); // 3, 表示第四个元素
 
+        //加上链式调用
+        ordering = ordering.nullsFirst().onResultOf(new Function<Worker, String>() {
+            @Override
+            public String apply(Worker input) {
+                return input.name;
+            }
+        });
+        List originList = Lists.newArrayList(
+                new Worker("zl", 4), new Worker("sl", 34),
+                new Worker("hp", 24), new Worker(null, 15),
+                new Worker("app", 46), new Worker("lyh", 26));
+        List sortedList = ordering.sortedCopy(originList);
+        System.out.println(sortedList);
+        // [Worker{name=null, age=15}, Worker{name=app, age=46}, ->
+        // Worker{name=hp, age=24}, Worker{name=lyh, age=26}, ->
+        // Worker{name=sl, age=34}, Worker{name=zl, age=4}]
     }
 }
 
@@ -79,5 +98,13 @@ class Worker {
     public Worker(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("name", name)
+                .add("age", age)
+                .toString();
     }
 }

@@ -1,5 +1,6 @@
 package com.qinjiangbo;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.qinjiangbo.pojo.Country;
 import org.junit.Test;
@@ -11,21 +12,15 @@ import org.junit.Test;
 public class ObjectsTest {
 
     @Test
-    public void testObjectsEquals() {
-        Country country = new Country("CHINA", 2000, "BEIJING");
-        Country country2 = new Country("CHINA", 2000, "BEIJING");
-        System.out.println(country.equals(country2));
-    }
-
-    @Test
     public void testObjectsHash() {
         Country country = new Country("CHINA", 2000, "BEIJING");
-        System.out.println(country.hashCode());
+        System.out.println(Objects.hashCode(country));
     }
 
     @Test
     public void testObjectsToString() {
         Country country = new Country("CHINA", 2000, "BEIJING");
+        /* 这个方法目前在MoreObjects类中 */
         System.out.println(country.toString());
     }
 
@@ -34,7 +29,14 @@ public class ObjectsTest {
         String name = null;
         String nickName = "Richard";
         /* 貌似这个方法目前不支持了 */
-        System.out.println(Objects.firstNonNull(nickName, name));
+        System.out.println(MoreObjects.firstNonNull(nickName, name));
+    }
+
+    @Test
+    public void testObjectsEquals() {
+        Country country = new Country("CHINA", 2000, "BEIJING");
+        Country country2 = new Country("CHINA", 2000, "BEIJING");
+        System.out.println(country.equals(country2));
     }
 
     @Test

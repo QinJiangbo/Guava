@@ -29,7 +29,13 @@ public class ThrowablesTest {
     }
 
     @Test
-    public void testThrowables() {
-        
+    public void testThrowablesPropagate() {
+        try {
+            throw new Exception();
+        } catch (Throwable t) {
+            String messages = Throwables.getStackTraceAsString(t);
+            System.out.println("messages: " + messages);
+            Throwables.propagate(t);
+        }
     }
 }

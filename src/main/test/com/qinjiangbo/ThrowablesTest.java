@@ -27,4 +27,9 @@ public class ThrowablesTest {
             System.out.println(Throwables.getRootCause(e).getMessage());
         }
     }
+
+    @Test
+    public void testThrowables() {
+        
+    }
 }

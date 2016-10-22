@@ -1,6 +1,8 @@
 package com.qinjiangbo;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import org.junit.Test;
 
 /**
@@ -26,5 +28,32 @@ public class ImmutCollectionTest {
         System.out.println(numbersMap.get("one")); // 1
     }
 
+    @Test
+    public void testImmutableSetBuilder() {
+        ImmutableSet<String> nameSet = new ImmutableSet.Builder<String>()
+                .add("hello", "I", "am", "Richard")
+                .build();
+        System.out.println(nameSet.toString());
+    }
+
+    @Test
+    public void testImmutableSetCreator() {
+        ImmutableSet<String> nameSet = ImmutableSet.of("Hello", "name", "Henry");
+        System.out.println(nameSet.toString());
+    }
+
+    @Test
+    public void testImmutableListBuilder() {
+        ImmutableList<String> nameList = new ImmutableList.Builder<String>()
+                .add("Hello", "World", "Guava", "Google")
+                .build();
+        System.out.println(nameList.toString());
+    }
+
+    @Test
+    public void testImmutableListCreator() {
+        ImmutableList<String> nameList = ImmutableList.of("Hello", "World", "Guava", "Google");
+        System.out.println(nameList);
+    }
 
 }

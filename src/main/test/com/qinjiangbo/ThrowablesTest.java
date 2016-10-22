@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class ThrowablesTest {
 
     @Test
-    public void testExtractInnerMostException() {
+    public void testThrowablesGetRootCause() {
         try {
             try {
                 try {
@@ -41,7 +41,7 @@ public class ThrowablesTest {
     }
 
     @Test
-    public void call() throws IOException {
+    public void testPropagrateIfInstanceOf() throws IOException {
         try {
             throw new IOException();
         } catch (Throwable t) {
@@ -49,4 +49,22 @@ public class ThrowablesTest {
             System.out.println("Hello World!");
         }
     }
+
+    @Test
+    public void testThrowablesGetCausalChain() {
+        try {
+            try {
+                try {
+                    throw new RuntimeException("Inner Most exception");
+                } catch (Exception e) {
+                    throw new SQLException("Middle tier exception", e);
+                }
+            } catch (Exception e) {
+                throw new IllegalStateException("Last exception", e);
+            }
+        } catch (Exception e) {
+            System.out.println(Throwables.getCausalChain(e));
+        }
+    }
+
 }

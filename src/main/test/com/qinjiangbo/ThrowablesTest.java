@@ -36,7 +36,7 @@ public class ThrowablesTest {
         } catch (Throwable t) {
             String messages = Throwables.getStackTraceAsString(t);
             System.out.println("messages: " + messages);
-            Throwables.propagate(t);
+            Throwables.propagate(t); // RuntimeException
         }
     }
 
@@ -45,8 +45,8 @@ public class ThrowablesTest {
         try {
             throw new IOException();
         } catch (Throwable t) {
-            Throwables.propagateIfInstanceOf(t, IOException.class);
-            //throw Throwables.propagate(t);
+            Throwables.propagateIfInstanceOf(t, NullPointerException.class);
+            System.out.println("Hello World!");
         }
     }
 }

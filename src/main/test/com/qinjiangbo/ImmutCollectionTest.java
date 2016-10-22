@@ -27,13 +27,6 @@ public class ImmutCollectionTest {
     }
 
     @Test
-    public void testImmutableMapCreator() {
-        ImmutableMap<String, Integer> numbersMap = ImmutableMap.of("one", 1, "two", 2,
-                "three", 3, "four", 4);
-        System.out.println(numbersMap.get("one")); // 1
-    }
-
-    @Test
     public void testImmutableSetBuilder() {
         ImmutableSet<String> nameSet = new ImmutableSet.Builder<String>()
                 .add("hello", "I", "am", "Richard")
@@ -42,17 +35,24 @@ public class ImmutCollectionTest {
     }
 
     @Test
-    public void testImmutableSetCreator() {
-        ImmutableSet<String> nameSet = ImmutableSet.of("Hello", "name", "Henry");
-        System.out.println(nameSet.toString()); // [Hello, name, Henry]
-    }
-
-    @Test
     public void testImmutableListBuilder() {
         ImmutableList<String> nameList = new ImmutableList.Builder<String>()
                 .add("Hello", "World", "Guava", "Google")
                 .build();
         System.out.println(nameList.toString()); // [Hello, World, Guava, Google]
+    }
+
+    @Test
+    public void testImmutableMapCreator() {
+        ImmutableMap<String, Integer> numbersMap = ImmutableMap.of("one", 1, "two", 2,
+                "three", 3, "four", 4);
+        System.out.println(numbersMap.get("one")); // 1
+    }
+
+    @Test
+    public void testImmutableSetCreator() {
+        ImmutableSet<String> nameSet = ImmutableSet.of("Hello", "name", "Henry");
+        System.out.println(nameSet.toString()); // [Hello, name, Henry]
     }
 
     @Test

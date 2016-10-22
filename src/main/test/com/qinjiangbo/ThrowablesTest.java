@@ -3,6 +3,7 @@ package com.qinjiangbo;
 import com.google.common.base.Throwables;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -36,6 +37,16 @@ public class ThrowablesTest {
             String messages = Throwables.getStackTraceAsString(t);
             System.out.println("messages: " + messages);
             Throwables.propagate(t);
+        }
+    }
+
+    @Test
+    public void call() throws IOException {
+        try {
+            throw new IOException();
+        } catch (Throwable t) {
+            Throwables.propagateIfInstanceOf(t, IOException.class);
+            //throw Throwables.propagate(t);
         }
     }
 }

@@ -7,7 +7,7 @@ import org.junit.Test;
  * Date: 9/18/16
  * Author: qinjiangbo@github.io
  */
-public class ImmutableMapTest {
+public class ImmutCollectionTest {
 
     @Test
     public void testUseMapBuilder() {
@@ -16,13 +16,15 @@ public class ImmutableMapTest {
                 .put("two", 2)
                 .put("three", 3)
                 .build();
-        System.out.println(numbersMap.get("two"));
+        System.out.println(numbersMap.get("two")); // 2
     }
 
     @Test
     public void testUseOfCreator() {
         ImmutableMap<String, Integer> numbersMap = ImmutableMap.of("one", 1, "two", 2,
                 "three", 3, "four", 4);
-        System.out.println(numbersMap.get("one"));
+        System.out.println(numbersMap.get("one")); // 1
     }
+
+
 }

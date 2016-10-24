@@ -66,6 +66,7 @@ public class MultiMapTest {
         multimap.put("US", "Brooklyn");
         Collection<String> collection = multimap.get("US");
         System.out.println(collection.toString());
+        // [Washington DC, Brooklyn, Seattle, LA]
     }
 
 

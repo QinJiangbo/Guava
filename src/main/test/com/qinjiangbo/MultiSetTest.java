@@ -4,10 +4,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Date: 9/19/16
@@ -32,6 +29,19 @@ public class MultiSetTest {
         for (Map.Entry<String, Integer> entry : entrySet) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+    }
+
+    @Test
+    public void testGuava_WordCount() {
+        String string = "I have a dream ! I dream one day I can go everywhere I wish !";
+        String[] words = string.split(" ");
+        List<String> wordList = Arrays.asList(words);
+        Multiset<String> multiset = HashMultiset.create();
+        multiset.addAll(wordList);
+        for (String word : multiset.elementSet()) { // 返回不重复元素集合
+            System.out.println(word + ":" + multiset.count(word));
+        }
+
     }
 
     @Test

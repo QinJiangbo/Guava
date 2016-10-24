@@ -58,15 +58,15 @@ public class MultiMapTest {
     }
 
     @Test
-    public void testMultiMap() {
+    public void testMultiMapGet() {
         Multimap<String, String> multimap = HashMultimap.create();
         multimap.put("US", "Washington DC");
         multimap.put("US", "LA");
         multimap.put("US", "Seattle");
         multimap.put("US", "Brooklyn");
-        Collection collections = multimap.entries();
-        System.out.println(collections.toString());
-        // 返回的是Multimap所有的键值对
-        // [US=Washington DC, US=Brooklyn, US=Seattle, US=LA]
+        Collection<String> collection = multimap.get("US");
+        System.out.println(collection.toString());
     }
+
+
 }

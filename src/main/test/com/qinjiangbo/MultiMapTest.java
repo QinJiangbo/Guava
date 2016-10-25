@@ -42,6 +42,7 @@ public class MultiMapTest {
         for (Map.Entry entry : entrySet) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+        // US:[Washington DC, Brooklyn, Seattle, LA]
     }
 
     @Test

@@ -90,4 +90,29 @@ public class CollectionsTest {
         }
 
     }
+
+    @Test
+    public void testLists() {
+
+    }
+
+    @Test
+    public void testSets() {
+
+    }
+
+    @Test
+    public void testMaps() {
+
+    }
+
+    @Test
+    public void testMultiSets() {
+
+    }
+
+    @Test
+    public void testMultiMaps() {
+
+    }
 }

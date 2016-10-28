@@ -130,6 +130,14 @@ public class CollectionsTest {
         setView = Sets.difference(set1, set2);
         System.out.println(setView.size()); // 2
         System.out.println(setView.toString()); // [Three, One]
+
+        // 取笛卡尔积
+        Set<List<String>> product = Sets.cartesianProduct(set1, set2);
+        System.out.println(product); // [[Two, Five], [Two, Six], [Two, Two], [Two, Four], [Three, Five], [Three, Six], [Three, Two], [Three, Four], [One, Five], [One, Six], [One, Two], [One, Four], [Four, Five], [Four, Six], [Four, Two], [Four, Four]]
+
+        // 集合所有子集
+        Set<Set<String>> sets = Sets.powerSet(set1);
+        System.out.println(sets); // powerSet({Two=0, Three=1, One=2, Four=3})
     }
 
     @Test

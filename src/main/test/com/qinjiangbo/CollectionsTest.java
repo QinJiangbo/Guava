@@ -118,8 +118,13 @@ public class CollectionsTest {
 
         // 取交集
         Sets.SetView setView = Sets.intersection(set1, set2);
-        System.out.println(setView.size());
-        System.out.println(setView.toString());
+        System.out.println(setView.size()); // 2
+        System.out.println(setView.toString()); // [Two, Four]
+
+        // 取并集
+        setView = Sets.union(set1, set2);
+        System.out.println(setView.size()); // 6
+        System.out.println(setView.toString()); // [Two, Three, One, Four, Five, Six]
     }
 
     @Test

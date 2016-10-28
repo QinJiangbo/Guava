@@ -6,14 +6,12 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.qinjiangbo.vo.CountryEnum;
 import com.sun.istack.internal.Nullable;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Date: 9/14/16
@@ -115,7 +113,13 @@ public class CollectionsTest {
 
     @Test
     public void testSets() {
+        Set<String> set1 = Sets.newHashSet("One", "Two", "Three", "Four");
+        Set<String> set2 = Sets.newHashSet("Two", "Four", "Five", "Six");
 
+        // 取交集
+        Sets.SetView setView = Sets.intersection(set1, set2);
+        System.out.println(setView.size());
+        System.out.println(setView.toString());
     }
 
     @Test

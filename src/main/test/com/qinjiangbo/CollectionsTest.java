@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Date: 9/14/16
@@ -93,7 +94,23 @@ public class CollectionsTest {
 
     @Test
     public void testLists() {
+        // 创造集合类-->直接newArrayList就行了
+        List<String> names = Lists.newArrayList("Richard", "Amy", "Lily", "Sarah");
+        List<Integer> numbers = Lists.newArrayList(11, 78, 89, 45, 30);
+        System.out.println(names); // [Richard, Amy, Lily, Sarah]
+        System.out.println(numbers); // [11, 78, 89, 45, 30]
 
+        // 操作集合类-->反转
+        List<String> reverseNames = Lists.reverse(names);
+        List<Integer> reverseNumbers = Lists.reverse(numbers);
+        System.out.println(reverseNames); // [Sarah, Lily, Amy, Richard]
+        System.out.println(reverseNumbers); // [30, 45, 89, 78, 11]
+
+        // 分割集合类
+        List<List<String>> nameParts = Lists.partition(names, 2);
+        List<List<Integer>> numberParts = Lists.partition(numbers, 2);
+        System.out.println(nameParts); // [[Richard, Amy], [Lily, Sarah]]
+        System.out.println(numberParts); // [[11, 78], [89, 45], [30]]
     }
 
     @Test

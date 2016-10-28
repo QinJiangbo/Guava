@@ -125,6 +125,11 @@ public class CollectionsTest {
         setView = Sets.union(set1, set2);
         System.out.println(setView.size()); // 6
         System.out.println(setView.toString()); // [Two, Three, One, Four, Five, Six]
+
+        // 取差集
+        setView = Sets.difference(set1, set2);
+        System.out.println(setView.size()); // 2
+        System.out.println(setView.toString()); // [Three, One]
     }
 
     @Test

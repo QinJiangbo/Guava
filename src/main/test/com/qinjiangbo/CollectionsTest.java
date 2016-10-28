@@ -138,6 +138,8 @@ public class CollectionsTest {
         // 集合所有子集
         Set<Set<String>> sets = Sets.powerSet(set1);
         System.out.println(sets); // powerSet({Two=0, Three=1, One=2, Four=3})
+
+
     }
 
     @Test

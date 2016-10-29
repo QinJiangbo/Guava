@@ -4,9 +4,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
-import com.google.common.collect.Collections2;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
+import com.google.common.collect.*;
 import com.qinjiangbo.vo.CountryEnum;
 import com.sun.istack.internal.Nullable;
 import org.junit.Test;
@@ -144,16 +142,30 @@ public class CollectionsTest {
 
     @Test
     public void testMaps() {
+        // 创建Map -> 方法1
+        ImmutableMap<String, Integer> left = ImmutableMap
+                .of("Richard", 88, "Amy", 90, "Sarah", 87, "Lily", 89);
+        ImmutableMap<String, Integer> right = ImmutableMap
+                .of("Tom", 78, "Amy", 89, "Richard", 88);
 
-    }
+        // 创建Map -> 方法2
+        List<String> strings = Lists.newArrayList("Helloo", "World", "Beautiful", "good");
+        ImmutableMap<Integer, String> stringsByIndex = Maps.uniqueIndex(strings,
+                string -> string.length());
+        System.out.println(stringsByIndex); // {6=Helloo, 5=World, 9=Beautiful, 4=good}
 
-    @Test
-    public void testMultiSets() {
+        MapDifference<String, Integer> diff = Maps.difference(left, right);
 
-    }
+        // 取相同的Entry键值都相同
+        System.out.println(diff.entriesInCommon()); // {Richard=88}
 
-    @Test
-    public void testMultiMaps() {
+        // 取键相同值不同的元素
+        System.out.println(diff.entriesDiffering()); // {Amy=(90, 89)}
 
+        // 取左边有右边没有的元素
+        System.out.println(diff.entriesOnlyOnLeft()); // {Sarah=87, Lily=89}
+
+        // 取右边有左边没有的元素
+        System.out.println(diff.entriesOnlyOnRight()); // {Tom=78}
     }
 }

@@ -168,4 +168,28 @@ public class CollectionsTest {
         // 取右边有左边没有的元素
         System.out.println(diff.entriesOnlyOnRight()); // {Tom=78}
     }
+
+    @Test
+    public void testIterables() {
+        List<Integer> ints1 = Lists.newArrayList(1, 2, 1, 4, 6, 9);
+        List<Integer> ints2 = Lists.newArrayList(3, 7, 4, 6, 2, 1);
+
+        // 融合两个列表
+        Iterable<Integer> iterable = Iterables.concat(ints1, ints2);
+        Iterator iterator = iterable.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + ",");
+        } // 1,2,1,4,6,9,3,7,4,6,2,1,
+
+        // 获取列表中第一个和最后一个元素
+        int last = Iterables.getLast(ints1);
+        System.out.println(last); // 9
+
+        int first = Iterables.getFirst(ints1, 10000);
+        System.out.println(first); // 1
+
+        // 出现频率统计
+        int count = Iterables.frequency(ints1, 1);
+        System.out.println(count); // 2
+    }
 }

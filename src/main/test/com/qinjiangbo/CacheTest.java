@@ -20,7 +20,7 @@ public class CacheTest {
     @Test
     public void testLoadingCache() throws ExecutionException {
         Map<String, String> database = Maps.newHashMap();
-        database.put("qinjiangbo", "That's my way!");
+        database.put("richard", "That's my way!");
         database.put("amy", "I love you!");
         database.put("nike", "Just do it!");
         LoadingCache<String, String> cache = CacheBuilder

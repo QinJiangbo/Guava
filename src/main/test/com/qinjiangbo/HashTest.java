@@ -48,7 +48,6 @@ public class HashTest {
     @Test
     public void testGoodFastHash() {
         System.out.println(Hashing.goodFastHash(1));
-        System.out.println(Hashing.goodFastHash(10));
     }
 
     class Student {

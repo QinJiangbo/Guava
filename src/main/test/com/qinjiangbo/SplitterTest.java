@@ -17,35 +17,35 @@ public class SplitterTest {
     public void testSplitOnSemicolons() {
         Iterable<String> iterable = Splitter.on(";").split("Java;Scala;Php;Haskell");
         List<String> splittedList = Lists.newArrayList(iterable);
-        System.out.println(splittedList.get(2).equals("Php"));
+        System.out.println(splittedList.get(2).equals("Php")); // true
     }
 
     @Test
     public void testSplitOnRegExp() {
         Iterable<String> iterable = Splitter.onPattern("\\d+").split("Java13Scala41Php5C#6");
         List<String> splittedList = Lists.newArrayList(iterable);
-        System.out.println(splittedList.get(2).equals("Php"));
+        System.out.println(splittedList.get(2).equals("Php")); // true
     }
 
     @Test
     public void testSplitUsingCharMatcher() {
         Iterable<String> iterable = Splitter.on(CharMatcher.inRange('3', '8')).split("Java3Scala4Haskell7Brain9Kotlin");
         List<String> splittedList = Lists.newArrayList(iterable);
-        System.out.println(splittedList.get(2));
+        System.out.println(splittedList.get(3)); // Brain9Kotlin
     }
 
     @Test
     public void testSplitOmitEmptyStrings() {
         Iterable<String> iterable = Splitter.on(";").omitEmptyStrings().split("Java;Scala; ;;Haskell;;Kotlin");
         List<String> splittedList = Lists.newArrayList(iterable);
-        System.out.println(splittedList.get(2));
+        System.out.println(splittedList.get(2)); // [说明一下,这里输出是空格]
     }
 
     @Test
     public void testSplitTrimResults() {
         Iterable<String> iterable = Splitter.on(";").trimResults().omitEmptyStrings().split("Java;Scala; ;;Haskell;;Kotlin");
         List<String> splittedList = Lists.newArrayList(iterable);
-        System.out.println(splittedList.get(2));
+        System.out.println(splittedList.get(2)); // Haskell
     }
 
     @Test

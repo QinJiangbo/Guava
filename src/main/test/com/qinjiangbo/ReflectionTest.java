@@ -1,6 +1,7 @@
 package com.qinjiangbo;
 
 import com.google.common.collect.Lists;
+import com.google.common.reflect.Invokable;
 import com.google.common.reflect.Reflection;
 import com.google.common.reflect.TypeToken;
 import org.junit.Test;
@@ -66,6 +67,12 @@ public class ReflectionTest {
         TypeToken<?> genericType = typeToken.resolveType(ArrayList.class.getTypeParameters()[0]);
         System.out.println(genericType.getType());
     }
+
+    @Test
+    public void testInvokable() {
+
+    }
+
 
 }
 

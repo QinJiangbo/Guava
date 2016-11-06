@@ -13,28 +13,28 @@ public class IntsTest {
     public void testFindGivenNumberInArray() {
         final int[] array1 = new int[]{0, 15, 49};
         final int[] array2 = new int[]{5, 2, 4, -18, 450};
-        System.out.println(Ints.contains(array1, 49));
-        System.out.println(Ints.indexOf(array2, 4));
+        System.out.println(Ints.contains(array1, 49)); // true
+        System.out.println(Ints.indexOf(array2, 4)); // 2
     }
 
     @Test
     public void testConcatArrays() {
         final int[] array1 = new int[]{0, 15, 4, 49};
         final int[] array2 = new int[]{5, 2, 4, -18, 450};
-        System.out.println(Ints.concat(array1, array2).length);
+        System.out.println(Ints.concat(array1, array2).length); // 9
     }
 
     @Test
     public void testJoinArrayUsingSeprator() {
         final int[] array1 = new int[]{0, 15, 4, 49};
         final int[] array2 = new int[]{5, 2, 4, -18, 450};
-        System.out.println(Ints.join(" : ", array2));
+        System.out.println(Ints.join(" : ", array2)); // 5 : 2 : 4 : -18 : 450
     }
 
     @Test
     public void testFindMaxAndMinInArray() {
         final int[] array = new int[]{5, 2, 4, -18, 450};
-        System.out.println(Ints.min(array));
-        System.out.println(Ints.max(array));
+        System.out.println(Ints.min(array)); // -18
+        System.out.println(Ints.max(array)); // 450
     }
 }

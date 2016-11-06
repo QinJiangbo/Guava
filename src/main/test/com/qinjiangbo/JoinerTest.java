@@ -17,19 +17,19 @@ public class JoinerTest {
     public void testJoinerOn() {
         List<String> languages = Arrays.asList("Java", "Haskell", "Scala", "Brainfuck");
         System.out.println(Joiner.on(',').join(languages));
-    }
+    } // Java,Haskell,Scala,Brainfuck
 
     @Test
     public void testJoinerJoinWithCommasAndOmitNulls() {
         List<String> countriesWithNullValue = Arrays.asList("Poland", "Brazil", "Ukraine", null, "China");
         System.out.println(Joiner.on(',').skipNulls().join(countriesWithNullValue));
-    }
+    } // Poland,Brazil,Ukraine,China
 
     @Test
     public void testJoinerJoinWithCommasAndReplaceNullWithDefaultValue() {
         List<String> countriesWithNullValue = Arrays.asList("Poland", "Brazil", "Ukraine", null, "China");
         System.out.println(Joiner.on(',').useForNull("NONE").join(countriesWithNullValue));
-    }
+    } // Poland,Brazil,Ukraine,NONE,China
 
     @Test
     public void testJoinerJoinMap() {
@@ -39,5 +39,5 @@ public class JoinerTest {
         numberWords.put(3, null);
         numberWords.put(4, "four");
         System.out.println(Joiner.on(" | ").withKeyValueSeparator(" -> ").useForNull("Unknown").join(numberWords));
-    }
+    } // 1 -> one | 2 -> two | 3 -> Unknown | 4 -> four
 }

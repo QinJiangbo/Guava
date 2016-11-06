@@ -47,4 +47,10 @@ public class IntsTest {
         System.out.println(Ints.toArray(ints)); // [I@1b701da1
         System.out.println(Ints.toArray(ints)[2]); // 5
     }
+
+    @Test
+    public void testAsList() {
+        final int[] ints = new int[]{1, 45, 36, 76, 23, 6};
+        System.out.println(Ints.asList(ints)); // [1, 45, 36, 76, 23, 6]
+    }
 }

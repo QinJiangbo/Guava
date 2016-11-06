@@ -1,7 +1,10 @@
 package com.qinjiangbo;
 
+import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 import org.junit.Test;
+
+import java.util.List;
 
 /**
  * Date: 9/20/16
@@ -36,5 +39,12 @@ public class IntsTest {
         final int[] array = new int[]{5, 2, 4, -18, 450};
         System.out.println(Ints.min(array)); // -18
         System.out.println(Ints.max(array)); // 450
+    }
+
+    @Test
+    public void testToArray() {
+        List<Integer> ints = Lists.newArrayList(1, 45, 5, 76, 34, 26, 68);
+        System.out.println(Ints.toArray(ints)); // [I@1b701da1
+        System.out.println(Ints.toArray(ints)[2]); // 5
     }
 }

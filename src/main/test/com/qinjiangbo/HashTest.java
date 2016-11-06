@@ -1,8 +1,11 @@
 package com.qinjiangbo;
 
 import com.google.common.base.Charsets;
+import com.google.common.collect.Lists;
 import com.google.common.hash.*;
 import org.junit.Test;
+
+import java.util.List;
 
 /**
  * Date: 06/11/2016
@@ -31,7 +34,15 @@ public class HashTest {
 
     @Test
     public void testConsistentHash() {
+        List<String> ips = Lists.newArrayList("192.168.1.100",
+                "192.168.1.110", "192.168.1.120");
+        long ipHashCode1 = Hashing.md5().newHasher().putString(ips.get(0), Charsets.UTF_8).hash().asLong();
+        long ipHashCode2 = Hashing.md5().newHasher().putString(ips.get(1), Charsets.UTF_8).hash().asLong();
+        long ipHashCode3 = Hashing.md5().newHasher().putString(ips.get(2), Charsets.UTF_8).hash().asLong();
 
+        System.out.println("ip1: " + Hashing.consistentHash(ipHashCode1, 3));
+        System.out.println("ip2: " + Hashing.consistentHash(ipHashCode2, 3));
+        System.out.println("ip3: " + Hashing.consistentHash(ipHashCode3, 3));
     }
 
     class Student {

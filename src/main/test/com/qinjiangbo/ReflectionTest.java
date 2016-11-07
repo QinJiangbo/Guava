@@ -63,7 +63,7 @@ public class ReflectionTest {
         TypeToken<ArrayList<String>> typeToken = new TypeToken<ArrayList<String>>() {
         };
         TypeToken<?> genericType = typeToken.resolveType(ArrayList.class.getTypeParameters()[0]);
-        System.out.println(genericType.getType());
+        System.out.println(genericType.getType()); // class java.lang.String
     }
 
     @Test

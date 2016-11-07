@@ -6,6 +6,10 @@ import com.google.common.reflect.Reflection;
 import com.google.common.reflect.TypeToken;
 import org.junit.Test;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
@@ -14,6 +18,8 @@ interface People {
     void printPeople();
 }
 
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
 @interface ABC {
     String value() default "Hello";
 }
@@ -84,7 +90,7 @@ public class ReflectionTest {
         System.out.println(invokable.isPublic()); // true
         System.out.println(invokable.isAbstract()); // false
         System.out.println(invokable.isAccessible()); // false
-        System.out.println(invokable.isAnnotationPresent(ABC.class)); // false
+        System.out.println(invokable.isAnnotationPresent(ABC.class)); // true
         System.out.println(invokable.isStatic()); // false
     }
 

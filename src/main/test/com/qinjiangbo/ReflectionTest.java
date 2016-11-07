@@ -1,6 +1,5 @@
 package com.qinjiangbo;
 
-import com.google.common.annotations.Beta;
 import com.google.common.collect.Lists;
 import com.google.common.reflect.Invokable;
 import com.google.common.reflect.Reflection;
@@ -8,9 +7,7 @@ import com.google.common.reflect.TypeToken;
 import org.junit.Test;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 
 interface People {

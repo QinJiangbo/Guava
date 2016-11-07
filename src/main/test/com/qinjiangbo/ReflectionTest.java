@@ -71,20 +71,21 @@ public class ReflectionTest {
     @Test
     public void testInvokable() throws NoSuchMethodException {
         Invokable invokable = Invokable.from(Student.class.getMethod("add", int.class, int.class));
-        System.out.println(invokable.isPublic());
-        System.out.println(invokable.getDeclaringClass());
-        System.out.println(invokable.getParameters());
-        System.out.println(invokable.getOwnerType());
-        System.out.println(invokable.getExceptionTypes());
-        System.out.println(invokable.getReturnType());
-        System.out.println(invokable.getModifiers());
-        System.out.println(invokable.getName());
-        System.out.println(invokable.isOverridable());
-        System.out.println(invokable.isVarArgs());
-        System.out.println(invokable.isPublic());
-        System.out.println(invokable.isAbstract());
-        System.out.println(invokable.isAccessible());
-        System.out.println(invokable.isAnnotationPresent(ABC.class));
+        System.out.println(invokable.isPublic()); // true
+        System.out.println(invokable.getDeclaringClass()); // class com.qinjiangbo.Student
+        System.out.println(invokable.getParameters()); // [int arg0, int arg1]
+        System.out.println(invokable.getOwnerType()); // com.qinjiangbo.Student
+        System.out.println(invokable.getExceptionTypes()); // [java.lang.NumberFormatException]
+        System.out.println(invokable.getReturnType()); // int
+        System.out.println(invokable.getModifiers()); // 1
+        System.out.println(invokable.getName()); // add
+        System.out.println(invokable.isOverridable()); // true
+        System.out.println(invokable.isVarArgs()); // false
+        System.out.println(invokable.isPublic()); // true
+        System.out.println(invokable.isAbstract()); // false
+        System.out.println(invokable.isAccessible()); // false
+        System.out.println(invokable.isAnnotationPresent(ABC.class)); // false
+        System.out.println(invokable.isStatic()); // false
     }
 
 }

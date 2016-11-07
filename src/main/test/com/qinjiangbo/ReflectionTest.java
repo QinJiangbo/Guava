@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 
 interface People {
@@ -45,13 +46,10 @@ public class ReflectionTest {
     }
 
     public InvocationHandler getHandler(Object proxiedObject) {
-        return new InvocationHandler() {
-            @Override
-            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("method name: " + method.getName());
-                System.out.println("args: " + (args == null ? "null" : args));
-                return method.invoke(proxiedObject, args);
-            }
+        return (proxy, method, args) -> {
+            System.out.println("method name: " + method.getName());
+            System.out.println("args: " + (args == null ? "null" : args));
+            return method.invoke(proxiedObject, args);
         };
     }
 
@@ -69,10 +67,11 @@ public class ReflectionTest {
     }
 
     @Test
-    public void testInvokable() {
-
+    public void testInvokable() throws NoSuchMethodException {
+        Invokable invokable = Invokable.from(Student.class.getMethod("getName"));
+        System.out.println(invokable.isPublic());
+        System.out.println(invokable.getDeclaringClass());
     }
-
 
 }
 

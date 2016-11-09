@@ -49,6 +49,7 @@ public class HashTest {
     public void testGoodFastHash() {
         System.out.println(Hashing.goodFastHash(1));
         System.out.println(Hashing.murmur3_32(100));
+        System.out.println(Hashing.sipHash24(10, 1000));
     }
 
     class Student {

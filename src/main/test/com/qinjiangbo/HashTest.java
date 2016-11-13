@@ -52,8 +52,8 @@ public class HashTest {
         System.out.println(Hashing.sipHash24(10, 1000));
         long goodHash1 = Hashing.goodFastHash(10).newHasher().putInt(10).hash().asLong();
         long goodHash2 = Hashing.goodFastHash(10).newHasher().putInt(11).hash().asLong();
-        System.out.println(Hashing.consistentHash(goodHash1, 2));
-        System.out.println(Hashing.consistentHash(goodHash2, 2));
+        System.out.println("goodHash1: " + Hashing.consistentHash(goodHash1, 2));
+        System.out.println("goodHash2: " + Hashing.consistentHash(goodHash2, 2));
     }
 
     class Student {

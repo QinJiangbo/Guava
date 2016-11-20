@@ -48,7 +48,6 @@ public class HashTest {
     @Test
     public void testGoodFastHash() {
         System.out.println(Hashing.goodFastHash(1));
-        System.out.println(Hashing.murmur3_32(100));
         int goodHash1 = Hashing.goodFastHash(10).newHasher().putInt(10).hash().asInt();
         int goodHash2 = Hashing.goodFastHash(10).newHasher().putInt(11).hash().asInt();
         System.out.println("goodHash1: " + Hashing.consistentHash(goodHash1, 2));

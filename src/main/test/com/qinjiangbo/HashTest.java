@@ -56,6 +56,7 @@ public class HashTest {
         System.out.println("goodHash3: " + Hashing.consistentHash(goodHash3, 2));
 
         int goodHash4 = Hashing.goodFastHash(10).newHasher().putInt(13).hash().asInt();
+        System.out.println("goodHash4: " + Hashing.consistentHash(goodHash4, 2));
     }
 
     class Student {

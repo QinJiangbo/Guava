@@ -49,6 +49,7 @@ public class HashTest {
     public void testGoodFastHash() {
         int goodHash1 = Hashing.goodFastHash(10).newHasher().putInt(10).hash().asInt();
         int goodHash2 = Hashing.goodFastHash(10).newHasher().putInt(11).hash().asInt();
+        int goodHash3 = Hashing.goodFastHash(10).newHasher().putInt(12).hash().asInt();
         System.out.println("goodHash1: " + Hashing.consistentHash(goodHash1, 2));
         System.out.println("goodHash2: " + Hashing.consistentHash(goodHash2, 2));
     }
